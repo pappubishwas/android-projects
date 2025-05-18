@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1020595303167",
+    "project_id": "e-commarce-website-bbc6a",
+    "storage_bucket": "e-commarce-website-bbc6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020595303167:android:3bd0acb855c8d3503fd2ca",
+        "android_client_info": {
+          "package_name": "com.example.e_commarce_website"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBehZTb5KXUdWBDH0iaTH-eTAuyHKcFgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

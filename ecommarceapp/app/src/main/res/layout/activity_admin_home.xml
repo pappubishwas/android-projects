@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#DDD05E">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Welcome to the Admin Panel!"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btn_insert_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Insert Product"
+        android:backgroundTint="#058E8E"
+        android:textColor="@android:color/white"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_view_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="View Product"
+        android:backgroundTint="#058E8E"
+        android:textColor="@android:color/white"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_update_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Update Product"
+        android:backgroundTint="#058E8E"
+        android:textColor="@android:color/white"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_delete_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Product"
+        android:backgroundTint="#069191"
+        android:textColor="@android:color/white"
+        android:padding="16dp" />
+
+</LinearLayout>

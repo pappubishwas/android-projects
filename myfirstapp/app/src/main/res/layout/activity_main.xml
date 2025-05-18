@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#E91E63"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="#009688"
+        android:gravity="center"
+        android:padding="30dp"
+        android:text="Hi , I am Pappu , Welcome to everybody.Thank you"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_below="@id/textView1"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:text="So, Today we will discuss."
+        android:padding="30dp"
+        android:textSize="24sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:background="#000"
+
+        />
+    <Button
+        android:id="@+id/button1"
+        android:layout_below="@id/textView2"
+        android:layout_marginTop="250dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textSize="24sp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+
+
+        />
+</RelativeLayout>
