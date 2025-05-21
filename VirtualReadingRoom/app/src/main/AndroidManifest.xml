@@ -25,12 +25,6 @@
             android:name=".DeleteBookActivity"
             android:exported="false" />
         <activity
-            android:name=".UpdateBookActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ViewBookActivity"
-            android:exported="false" />
-        <activity
             android:name=".InsertBookActivity"
             android:exported="false" />
         <activity

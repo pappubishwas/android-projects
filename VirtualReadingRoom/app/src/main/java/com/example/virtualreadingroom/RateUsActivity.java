@@ -73,7 +73,7 @@ public class RateUsActivity extends AppCompatActivity {
                 .add(ratingData)
                 .addOnSuccessListener(documentReference -> {
                     Toast.makeText(RateUsActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
-                    finish(); // Close this activity and go back
+                    finish();
                 })
                 .addOnFailureListener(e -> Toast.makeText(RateUsActivity.this, "Failed to submit. Try again.", Toast.LENGTH_SHORT).show());
     }

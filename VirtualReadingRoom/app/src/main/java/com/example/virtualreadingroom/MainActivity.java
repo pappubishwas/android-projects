@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         if (currentUser != null) {
             // User is logged in, navigate to the homepage
             navigateToHome();
-            return; // Stop further execution of onCreate
+            return;
         }
 
 

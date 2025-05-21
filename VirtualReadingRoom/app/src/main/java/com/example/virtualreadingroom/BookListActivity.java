@@ -35,7 +35,7 @@ public class BookListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         bookList = new ArrayList<>();
-        loadBooksFromDatabase(); // Populate bookList from SQLite
+        loadBooksFromDatabase();
 
         tvBookCount.setText("Books: " + bookList.size());
 
@@ -51,7 +51,7 @@ public class BookListActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
 
-        // Now fetch ratings from Firestore
+        // Fetch ratings from Firestore
         fetchRatingsFromFirestore();
     }
 

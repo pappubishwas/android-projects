@@ -84,8 +84,8 @@ public class InsertBookActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK && data != null && data.getData() != null) {
             if (requestCode == REQUEST_IMAGE) {
                 coverUri = data.getData();
-                imgThumbnail.setImageURI(coverUri);             // <-- ADD THIS
-                imgThumbnail.setVisibility(View.VISIBLE);       // <-- ADD THIS
+                imgThumbnail.setImageURI(coverUri);
+                imgThumbnail.setVisibility(View.VISIBLE);
                 Toast.makeText(this, "Cover image selected", Toast.LENGTH_SHORT).show();
             } else if (requestCode == REQUEST_PDF) {
                 pdfUri = data.getData();
@@ -137,7 +137,7 @@ public class InsertBookActivity extends AppCompatActivity {
 
         if (rowId != -1) {
             Toast.makeText(this, "Book saved locally!", Toast.LENGTH_SHORT).show();
-            clearFields(); // <-- Clear form fields on success
+            clearFields();
         } else {
             Toast.makeText(this, "Failed to save book", Toast.LENGTH_SHORT).show();
         }
@@ -149,13 +149,13 @@ public class InsertBookActivity extends AppCompatActivity {
         etAuthorName.setText("");
         etGenre.setText("");
 
-        imgThumbnail.setImageDrawable(null); // clear the image
-        imgThumbnail.setVisibility(View.GONE); // hide image view again (optional)
+        imgThumbnail.setImageDrawable(null);
+        imgThumbnail.setVisibility(View.GONE);
 
         coverUri = null;
         pdfUri = null;
 
-        // Optional: Reset button labels if you had changed them
+
         btnSelectCover.setText("Select Cover");
         btnSelectPDF.setText("Select PDF");
     }

@@ -132,12 +132,6 @@ public class RegisterActivity extends AppCompatActivity {
                 });
     }
 
-//        private void navigateToSplash() {
-//            Intent intent = new Intent(this, MainActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
-
     private void navigateToLogin() {
         finish(); // Closes RegisterActivity and returns to SplashActivity
     }
@@ -147,17 +141,16 @@ public class RegisterActivity extends AppCompatActivity {
         public String userId;
         public String name;
         public String email;
-        public String phone; // Add phone number field
+        public String phone;
 
         public User() {
-            // Default constructor required for Firestore deserialization
         }
 
         public User(String userId, String name, String email, String phone) {
             this.userId = userId;
             this.name = name;
             this.email = email;
-            this.phone = phone; // Assign phone number
+            this.phone = phone;
         }
     }
 }

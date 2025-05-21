@@ -16,8 +16,6 @@ public class BookDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // No need to set layout if just opening PDF
-        // setContentView(R.layout.activity_book_detail);
 
         Intent intent = getIntent();
         String pdfPath = intent.getStringExtra("pdfPath");

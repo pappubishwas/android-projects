@@ -11,7 +11,7 @@ public class Book {
     private String name;
     private String author;
     private String genre;
-    private String coverPath; // local image file path
+    private String coverPath;
     private String pdfPath;
     private String timestamp;
     private float averageRating;
