@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,17 +18,44 @@ import java.util.List;
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder> {
     private Context context;
     private List<Book> bookList;
+    private List<Book> fullList;
     private final OnItemClickListener listener;
+
+    public BookAdapter(Context context, List<Book> bookList, OnItemClickListener listener) {
+        this.context = context;
+        this.bookList = bookList;
+        this.fullList = new ArrayList<>(bookList); // clone original list
+        this.listener = listener;
+    }
+
+    public void filterList(String query) {
+        bookList.clear();
+        if (query.isEmpty()) {
+            bookList.addAll(fullList);
+        } else {
+            String lowerCaseQuery = query.toLowerCase();
+            for (Book book : fullList) {
+                if (book.getName().toLowerCase().contains(lowerCaseQuery) ||
+                        book.getAuthor().toLowerCase().contains(lowerCaseQuery) ||
+                        book.getGenre().toLowerCase().contains(lowerCaseQuery)) {
+                    bookList.add(book);
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
+
+    public void updateFullList(List<Book> newList) {
+        fullList = new ArrayList<>(newList);
+    }
+    public int getFilteredCount() {
+        return bookList.size();
+    }
 
     public interface OnItemClickListener {
         void onItemClick(Book book);
     }
 
-    public BookAdapter(Context context, List<Book> bookList, OnItemClickListener listener) {
-        this.context = context;
-        this.bookList = bookList;
-        this.listener = listener;
-    }
 
     @NonNull
     @Override

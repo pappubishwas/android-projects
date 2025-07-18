@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import androidx.appcompat.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,6 +30,26 @@ public class BookListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_list);
+
+        SearchView searchView = findViewById(R.id.searchView);
+        searchView.setIconified(false);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                adapter.filterList(query);
+                tvBookCount.setText("Books: " + adapter.getFilteredCount());
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.filterList(newText);
+                tvBookCount.setText("Books: " + adapter.getFilteredCount());
+                return true;
+            }
+        });
+
+
         tvBookCount = findViewById(R.id.tvBookCount);
 
         recyclerView = findViewById(R.id.recyclerViewBooks);
@@ -37,7 +58,7 @@ public class BookListActivity extends AppCompatActivity {
         bookList = new ArrayList<>();
         loadBooksFromDatabase();
 
-        tvBookCount.setText("Books: " + bookList.size());
+
 
         adapter = new BookAdapter(this, bookList, book -> {
             Intent intent = new Intent(BookListActivity.this, BookDetailActivity.class);
@@ -50,7 +71,8 @@ public class BookListActivity extends AppCompatActivity {
         });
 
         recyclerView.setAdapter(adapter);
-
+        adapter.updateFullList(bookList);
+        tvBookCount.setText("Books: " + bookList.size());
         // Fetch ratings from Firestore
         fetchRatingsFromFirestore();
     }
